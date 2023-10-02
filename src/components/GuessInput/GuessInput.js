@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GuessInput({ submitGuess }) {
+function GuessInput({ submitGuess, isDisabled = false }) {
   const [guess, setGuess] = React.useState('');
   const submitHandler = (event) => {
     event.preventDefault();
@@ -22,6 +22,7 @@ function GuessInput({ submitGuess }) {
         autoComplete="off"
         required={true}
         pattern=".{5,5}"
+        disabled={isDisabled}
         value={guess}
         onChange={inputHandler}
       />
