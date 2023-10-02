@@ -12,9 +12,8 @@ console.info({ answer });
 
 function Game() {
   const [guessResults, setGuessResults] = React.useState([]);
-  const submitGuess = (guessResult) => {
-    const key = `key--${guessResults.length}`;
-    const nextGuessResults = [...guessResults, { guess: guessResult, key }];
+  const submitGuess = (guess) => {
+    const nextGuessResults = [...guessResults, guess];
     setGuessResults(nextGuessResults);
   };
 
